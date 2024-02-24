@@ -1,0 +1,291 @@
+mqtt:
+  - sensor:
+    #POWER TOTAL
+    - name: "Power Total"
+      unique_id: emeterwtot
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualConsumption"].total }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: true
+  - sensor:
+    #POWER LINE 1
+    - name: "Power L1"
+      unique_id: emeterwl1
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualConsumption"].L1 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: true
+  - sensor:
+    #POWER LINE 2
+    - name: "Power L2"
+      unique_id: emeterwl2
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualConsumption"].L2 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: true
+  - sensor:
+    #POWER LINE 3
+    - name: "Power L3"
+      unique_id: emeterwl3
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualConsumption"].L3 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: true
+
+  - sensor:
+    #RETURN POWER TOTAL
+    - name: "Power Return Total"
+      unique_id: emeterrettot
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualProduction"].total }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #RETURN POWER L1
+    - name: "Power Return L1"
+      unique_id: emeterretl1
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualProduction"].L1 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #RETURN POWER L2
+    - name: "Power Return L2"
+      unique_id: emeterretl2
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualProduction"].L2 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #RETURN POWER L3
+    - name: "Power Return L3"
+      unique_id: emeterretl3
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeActualProduction"].L3 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+
+  - sensor:
+    #POWER CONSUMPTION TOTAL ACCUMULATED
+    - name: "Accumulated Power Total"
+      unique_id: emeterwcontot
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeTotalConsumption"].total }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #POWER CONSUMPTION L1 ACCUMULATED
+    - name: "Accumulated Power L1"
+      unique_id: emeterwconl1
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeTotalConsumption"].L1 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #POWER CONSUMPTION L2 ACCUMULATED
+    - name: "Accumulated Power L2"
+      unique_id: emeterwconl2
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeTotalConsumption"].L2 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #POWER CONSUMPTION L3 ACCUMULATED
+    - name: "Accumulated Power L3"
+      unique_id: emeterwconl3
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeTotalConsumption"].L3 }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+
+  - sensor:
+    #RETURN POWER TOTAL ACCUMULATED
+    - name: "Accumulated Power Return"
+      unique_id: emeterwaccret
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["activeTotalProduction"].total }}'
+      device_class: power
+      unit_of_measurement: "W"
+      state_class: measurement
+      enabled_by_default: False
+
+  - sensor:
+    #L1 RMS VOLTAGE
+    - name: "L1 RMS Voltage"
+      unique_id: emeterl1vrms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsVoltage"].L1 }}'
+      device_class: power
+      unit_of_measurement: "V"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #L2 RMS VOLTAGE
+    - name: "L2 RMS Voltage"
+      unique_id: emeterl2vrms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsVoltage"].L2 }}'
+      device_class: power
+      unit_of_measurement: "V"
+      state_class: measurement
+      enabled_by_default: False
+  - sensor:
+    #L3 RMS VOLTAGE
+    - name: "L3 RMS Voltage"
+      unique_id: emeterl3vrms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsVoltage"].L3 }}'
+      device_class: power
+      unit_of_measurement: "V"
+      state_class: measurement
+      enabled_by_default: False
+
+  - sensor:
+    #L1 RMS CURRENT
+    - name: "L1 RMS Current"
+      unique_id: emeterl1irms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsCurrent"].L1 | float(0) / 1000 }}'
+      device_class: power
+      unit_of_measurement: "A"
+      state_class: measurement
+      enabled_by_default: True
+  - sensor:
+    #L1 RMS CURRENT
+    - name: "L2 RMS Current"
+      unique_id: emeterl2irms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsCurrent"].L2  | float(0) / 1000 }}'
+      device_class: power
+      unit_of_measurement: "V"
+      state_class: measurement
+      enabled_by_default: True
+  - sensor:
+    #L1 RMS CURRENT
+    - name: "L3 RMS Current"
+      unique_id: emeterl3irms
+      device: {
+        identifiers: ["MQTT", "saveeye"],
+        manufacturer: "Saveeye",
+        model: "Kamstrup+",
+        name: "Saveeye Kamstrup+" }
+      state_topic: "saveeye/telemetry"
+      value_template: '{{ value_json["rmsCurrent"].L3  | float(0) / 1000 }}'
+      device_class: power
+      unit_of_measurement: "V"
+      state_class: measurement
+      enabled_by_default: True
