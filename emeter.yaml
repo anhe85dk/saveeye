@@ -271,7 +271,7 @@ mqtt:
       state_topic: "saveeye/telemetry"
       value_template: '{{ value_json["rmsCurrent"].L2  | float(0) / 1000 }}'
       device_class: power
-      unit_of_measurement: "V"
+      unit_of_measurement: "A"
       state_class: measurement
       enabled_by_default: True
   - sensor:
@@ -286,6 +286,6 @@ mqtt:
       state_topic: "saveeye/telemetry"
       value_template: '{{ value_json["rmsCurrent"].L3  | float(0) / 1000 }}'
       device_class: power
-      unit_of_measurement: "V"
+      unit_of_measurement: "A"
       state_class: measurement
       enabled_by_default: True
